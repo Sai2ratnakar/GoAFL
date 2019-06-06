@@ -5,10 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {Team} from './team';
 import {Game} from './game';
 import{Tip} from './tip';
-<<<<<<< HEAD
 import {Ladder} from './ladder';
-=======
->>>>>>> 1adc7ee20bde234044758a71176b7e82624d3ea9
 
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 
@@ -117,7 +114,6 @@ export class DataServiceService {
       ); 
   }
 
-<<<<<<< HEAD
   getLadder() : Observable<Ladder[]> {
    
     return this.http.get('https://api.squiggle.com.au/?q=ladder;source=1').pipe(
@@ -138,8 +134,6 @@ export class DataServiceService {
     );
       }
 
-=======
->>>>>>> 1adc7ee20bde234044758a71176b7e82624d3ea9
   getSelectedTeam(): Team{
     const teamString = localStorage.getItem('myTeam');
     let myTeam;

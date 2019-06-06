@@ -1,0 +1,31 @@
+<div>
+  
+  <p>My Rival team is {{myRival}}</p>
+  <div>
+    <table style="text-align: center;">
+
+        <tr><th>Home Team</th><th>Rival Team</th><th>Venue</th><th>Round</th><th>Date</th></tr>
+        
+      
+        <tr *ngFor="let game of nextFive">
+      
+          <td>{{myTeam.name}}</td>
+          <td>{{myRival}}</td>
+          <td>{{game.venue}}</td>
+          <td>{{game.round}}</td>
+          <td>{{game.date}}</td>
+        </tr>
+      </table>
+</div>
+
+
+</div>
+<!-- <div>
+<h2>{{team.name}}</h2>
+</div> -->
+
+<!-- <div>
+<li class= "items" *ngFor="let game of nextFive">
+ <span>{{game.hteam}}</span> {{game.ateam}}
+</li>
+</div> -->

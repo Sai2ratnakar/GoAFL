@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import {Observable, from} from 'rxjs';
 import {DataServiceService} from '../data.service';
 import {Team} from '../team';
 import {Game} from '../game';
 import {Tip} from '../tip';
-=======
->>>>>>> 73896653753a81f46664ac442bb1f76b39f66299
 
 @Component({
   selector: 'app-head-to-head',
@@ -14,7 +11,6 @@ import {Tip} from '../tip';
   styleUrls: ['./head-to-head.component.css']
 })
 export class HeadToHeadComponent implements OnInit {
-<<<<<<< HEAD
   myTeam: Team;
   myRival: string='Geelong';
   
@@ -68,12 +64,3 @@ export class HeadToHeadComponent implements OnInit {
   }
 }
 
-=======
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
->>>>>>> 73896653753a81f46664ac442bb1f76b39f66299

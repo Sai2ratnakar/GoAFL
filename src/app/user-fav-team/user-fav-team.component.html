@@ -1,25 +1,15 @@
 <div>
   <h2>My Teams</h2>
   <li  class="items" *ngFor="let team of teams" (click)="onSelect(team)">{{team.name}}</li>
-<<<<<<< HEAD
   <!-- <li  class="items" *ngFor="let team of teams" (click)="onSelect(team)">{{team.name}}</li> -->
   <div *ngIf="myTeam.name">
       <p>Your selected team is {{myTeam.name}}</p>
       <!-- <p>Your selected Rival team is {{}}</p> -->
-=======
-  <div *ngIf="myTeam.name">
-      <p>You selected team is {{myTeam.name}}</p>
-      
->>>>>>> 73896653753a81f46664ac442bb1f76b39f66299
   </div>
   <app-next-five></app-next-five>
   <app-my-team-results></app-my-team-results>
   <app-next-game-prediction></app-next-game-prediction>
-<<<<<<< HEAD
   <app-head-to-head></app-head-to-head>
-=======
-
->>>>>>> 73896653753a81f46664ac442bb1f76b39f66299
 </div>
 
 

@@ -125,6 +125,7 @@ export class DataServiceService {
     }
     return myTeam;
   }
+<<<<<<< HEAD
 
   // getRivalTeam(): Team{
   //   const teamString = localStorage.getItem('myRival');
@@ -138,5 +139,7 @@ export class DataServiceService {
   //   }
   //   return myRival;
   // }
+=======
+>>>>>>> 73896653753a81f46664ac442bb1f76b39f66299
   
 }

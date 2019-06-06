@@ -75,7 +75,11 @@ export class NextGamePredictionComponent implements OnInit {
           }
         }
       }
+<<<<<<< HEAD
       // console.log(this.nextGame);
+=======
+      console.log(this.nextGame);
+>>>>>>> 73896653753a81f46664ac442bb1f76b39f66299
     }); 
   }
 }

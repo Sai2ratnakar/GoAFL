@@ -15,9 +15,13 @@ import{NextGamePredictionComponent } from '../next-game-prediction/next-game-pre
 export class UserFavTeamComponent implements OnInit {
   selectedTeam: Team;
   teams:Team[];
+<<<<<<< HEAD
   // forRival:Team[];
   myTeam:Team;
   // myRival: Team;
+=======
+  myTeam:Team;
+>>>>>>> 73896653753a81f46664ac442bb1f76b39f66299
 
   constructor(private dataService: DataServiceService) {
     this.myTeam = this.dataService.getSelectedTeam();
@@ -34,7 +38,13 @@ export class UserFavTeamComponent implements OnInit {
   onSelect(team: Team): void{
     this.myTeam = team;
     localStorage.setItem('myTeam', this.myTeam.toString());
+<<<<<<< HEAD
     // localStorage.setItem('myRival', this.myRival.toString());
     // this.getPrediction();
+=======
+
+    // this.getPrediction();
+
+>>>>>>> 73896653753a81f46664ac442bb1f76b39f66299
   }
 }

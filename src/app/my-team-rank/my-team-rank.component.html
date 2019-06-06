@@ -1,0 +1,23 @@
+<div>
+  <table style="text-align: center;">
+
+      <tr><th>Team Name</th><th>Rank</th><th>Venue</th><th>Round</th><th>Date</th></tr>
+      
+    
+      <tr *ngFor="let game of allTeams">
+    
+        <td>{{game.team}}</td>
+        <td>{{game.rank}}</td>
+        
+      </tr>
+    </table>
+</div>
+<!-- <div>
+<h2>{{team.name}}</h2>
+</div> -->
+
+<!-- <div>
+<li class= "items" *ngFor="let game of nextFive">
+ <span>{{game.hteam}}</span> {{game.ateam}}
+</li>
+</div> -->

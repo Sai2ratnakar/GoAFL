@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <table style="text-align: center;">
 
       <tr><th>Home Team</th><th>Away Team</th><th>Score</th><th>Winner</th></tr>
@@ -12,4 +12,27 @@
         <td>{{game.winner}}</td>
       </tr>
     </table>
-</div>
+</div> -->
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+           
+                <tr>
+                    <th>Date</th>
+                  <th>Home Team</th>
+                  <th>Away Team</th>
+                  <th>Score</th>
+                  <th>Winner</th>                
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let game of allResults">
+    
+                <td>{{game.date}}</td>
+              <td>{{game.hteam}}</td>
+              <td>{{game.ateam}}</td>
+              <td>{{game.hscore}}-{{game.ascore}}</td>
+              <td>{{game.winner}}</td>
+            </tr>
+        </tbody>
+            </table>

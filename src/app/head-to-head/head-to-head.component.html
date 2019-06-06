@@ -1,6 +1,10 @@
 <div>
   
-  <p>My Rival team is {{myRival}}</p>
+  <p>My Rival team is {{myRival?.name}}</p>
+  <select class="form-control" (change)="updateGames(myRival)" [(ngModel)]="myRival">
+      <option disabled></option>
+      <option *ngFor="let team of teams" [value]="team">{{team.name}}</option>
+    </select>
   <div>
     <table style="text-align: center;">
 

@@ -13,6 +13,7 @@ import { NextGamePredictionComponent } from './next-game-prediction/next-game-pr
 import { HeadToHeadComponent } from './head-to-head/head-to-head.component';
 import { MyTeamRankComponent } from './my-team-rank/my-team-rank.component';
 import { UpComingGamesComponent } from './up-coming-games/up-coming-games.component';
+import { FormsModule } from '@angular/forms';
 // import { HeadToHeadComponent } from './head-to-head/head-to-head.component';
 
 @NgModule({
@@ -30,9 +31,9 @@ import { UpComingGamesComponent } from './up-coming-games/up-coming-games.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,FormsModule
   ],
   providers: [DataServiceService],
-  bootstrap: [UserFavTeamComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

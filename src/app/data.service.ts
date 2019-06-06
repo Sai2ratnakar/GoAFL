@@ -7,14 +7,19 @@ import {Game} from './game';
 import{Tip} from './tip';
 import {Ladder} from './ladder';
 
+
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataServiceService {
-  
+  private myteamsource = new BehaviorSubject<Team>(undefined);
+ // myteam$ = this.myteamservice.asObservable();
   constructor(private http: HttpClient ) { }
+  
+ 
+
   getTeams() : Observable<Team[]> {
    
     return this.http.get('https://api.squiggle.com.au/?q=teams').pipe(
@@ -133,20 +138,22 @@ export class DataServiceService {
       )))
     );
       }
-
-  getSelectedTeam(): Team{
-    const teamString = localStorage.getItem('myTeam');
-    let myTeam;
-    if(teamString) {
-      const team = new Team('',0, '','');
-      team.unserialize(teamString);
-      myTeam = team;
-    }else{
-      myTeam = new Team('',0,'','');
-    }
-    return myTeam;
-  }
-
+      public getteam():Observable<Team>{
+        return this.myteamsource.asObservable();
+      }
+      // getSelectedTeam(team:Team):Team{
+        // return this.myteamsource.next(team);
+        // const teamString = localStorage.getItem('myTeam');
+        // let myTeam;
+        // if(teamString) {
+        //   const team = new Team('',0, '','');
+        //   team.unserialize(teamString);
+        //   myTeam = team;
+        // }else{
+        //   myTeam = new Team('',0,'','');
+        // }
+       
+      // }
   // getRivalTeam(): Team{
   //   const teamString = localStorage.getItem('myRival');
   //   let myRival;
@@ -159,5 +166,13 @@ export class DataServiceService {
   //   }
   //   return myRival;
   // }
+
+  setTeam(team: Team) {
+    this.myteamsource.next(team);
+  }
+
+  getTeam() {
+    return this.myteamsource;
+  }
   
 }

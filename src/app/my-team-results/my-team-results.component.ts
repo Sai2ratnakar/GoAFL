@@ -16,18 +16,17 @@ export class MyTeamResultsComponent implements OnInit {
   allResults: Game[];
   nextRound: number=0;
   constructor(private data: DataServiceService) {
-    this.myTeam = this.data.getSelectedTeam();
+   this.data.getTeam().subscribe(team => {
+    if (team) {
+
+      this.myTeam = team;
+      this.getTeams();
+    }
+  });
    }
 
   ngOnInit() {
-  
-    this.getTeams();
-  // if(this.selected){
-  //   this.getTeams(this.team);
-  //   console.log("Chekced" + this.team);
-  // }
-  
-  }
+   }
 
   getTeams() {
     this.data.getGames().subscribe(games => 

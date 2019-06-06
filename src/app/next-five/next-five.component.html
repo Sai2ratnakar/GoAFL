@@ -1,19 +1,27 @@
-<div>
-    <table style="text-align: center;">
 
-        <tr><th>Home Team</th><th>Away Team</th><th>Venue</th><th>Round</th><th>Date</th></tr>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Venue</th>
+                <th>Round</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let game of nextFive">
+    
+                <td>{{game.date}}</td>
+                <td>{{game.hteam}}</td>
+                <td>{{game.ateam}}</td>
+                <td>{{game.venue}}</td>
+                <td>{{game.round}}</td>
+              </tr>
+        </tbody>
+            </table>
         
-      
-        <tr *ngFor="let game of nextFive">
-      
-          <td>{{game.hteam}}</td>
-          <td>{{game.ateam}}</td>
-          <td>{{game.venue}}</td>
-          <td>{{game.round}}</td>
-          <td>{{game.date}}</td>
-        </tr>
-      </table>
-</div>
+      </div>
 <!-- <div>
   <h2>{{team.name}}</h2>
 </div> -->

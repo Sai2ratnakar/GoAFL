@@ -1,0 +1,125 @@
+
+.header {
+  height: 50px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .navbar{
+   border: 1px solid #324960;
+   overflow: hidden;
+    background-color: #324960;
+    height: 50px;
+   line-height: 50px;
+   padding: 0px 20px 0px 20px;
+  }
+  .navbar a{
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight:700;
+  }
+  .logo{
+  margin-left:20px;
+      float:left;
+      margin-left:20px;
+      border-radius: 4px;
+    padding: 5px; 
+     
+  }
+   */
+   .active-tab {
+     color: green !important;
+     background: #4FC3A1;
+   }
+
+   
+  
+/*   .navbar a:hover {
+    background-color: white;
+    color: green !important;
+  } */
+  
+/*   .navbar a.active {
+    background-color: white;
+    color: #2699fb;
+  } */
+/*   
+  .navbar {
+    overflow: hidden;
+  } */
+  
+  
+  .dropdown {
+    overflow: hidden;
+     border: 1px solid #324960;
+   border-radius: 4px;
+   float: right;
+   color: white;
+   padding-right: 10px;
+   font-size: 16px;
+    border-block-style: 3px;
+    
+    color: white;
+   
+    background-color: #324960;
+    font-family: inherit;
+    margin: 0;
+    float: right;
+  }
+  
+  .dropdown .dropbtn {
+  
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: #324960;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #324960;
+    color: white;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #324960;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #4FC3A1;
+    border:1px;
+    
+    
+    color: white;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .team-selection {
+    cursor: pointer;
+  }

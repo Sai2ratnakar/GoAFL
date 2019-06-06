@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable, from} from 'rxjs';
-import {DataServiceService} from '../data.service';
-import {Team} from '../team';
-import {Game} from '../game';
-import {Tip} from '../tip';
+import { Observable, from } from 'rxjs';
+import { DataServiceService } from '../data.service';
+import { Team } from '../team';
+import { Game } from '../game';
+import { Tip } from '../tip';
 
 @Component({
   selector: 'app-head-to-head',
@@ -12,30 +12,42 @@ import {Tip} from '../tip';
 })
 export class HeadToHeadComponent implements OnInit {
   myTeam: Team;
-  myRival: string='Geelong';
-  
-  games:Game[];
+  myRival: Team;
+  teams: Team[];
+
+  games: Game[];
   nextFive: Game[];
-  nextRound: number=0;
-  constructor(private data: DataServiceService) {
-    this.myTeam = this.data.getSelectedTeam();
-    //this.myRival = this.data.getRivalTeam();
-   }
+  nextRound: number = 0;
+  constructor(private dataService: DataServiceService) {
+    // this.myTeam = this.data.getSelectedTeam();
+    this.dataService.getTeam().subscribe(team => {
+      if (team) {
+
+        this.myTeam = team;
+        if (this.myRival) {
+
+          this.getGames();
+        }
+      }
+    });
+    this.getAFLTeams();
+  }
+
+  updateGames() {
+    if (this.myTeam) {
+      this.getGames();
+    }
+  }
+
+  getAFLTeams(): void {
+    this.dataService.getTeams().subscribe(temp => { this.teams = temp; });
+  }
 
   ngOnInit() {
-  
-    this.getTeams();
-  // if(this.selected){
-  //   this.getTeams(this.team);
-  //   console.log("Chekced" + this.team);
-  // }
-  
   }
-  
-
-  getTeams() {
-    this.data.getGames().subscribe(games => 
-      { this.games = games;
+  getGames() {
+    this.dataService.getGames().subscribe(games => {
+    this.games = games;
       // console.log("Games" + this.games.length);
 
       // for(let game of this.games) {
@@ -48,18 +60,18 @@ export class HeadToHeadComponent implements OnInit {
       // console.log("NEXT ROUND IS" + this.nextRound);
 
       this.nextFive = [];
-    
-    for(let game of this.games){
-      // console.log(game);
-      if(game.ateam == this.myTeam.name || game.ateam==this.myRival){
-        
-        if(game.hteam == this.myTeam.name || game.hteam==this.myRival){
-          // if((game.round = this.nextRound)){
+
+      for (let game of this.games) {
+        //console.log(game);
+        if (game.ateam == this.myTeam.name || game.ateam == this.myRival.name) {
+
+          if (game.hteam == this.myTeam.name || game.hteam == this.myRival.name) {
+            // if((game.round = this.nextRound)){
             this.nextFive.push(game);
-      
+console.log(game);
+          }
         }
       }
-  }
     });
   }
 }

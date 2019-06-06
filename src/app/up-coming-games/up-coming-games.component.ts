@@ -4,6 +4,7 @@ import {DataServiceService} from '../data.service';
 import {Team} from '../team';
 import {Game} from '../game';
 import {Tip} from '../tip';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-up-coming-games',
@@ -16,13 +17,19 @@ export class UpComingGamesComponent implements OnInit {
   games:Game[];
   upComing: Game[];
   nextRound: number=0;
-  constructor(private data: DataServiceService) {
-    this.myTeam = this.data.getSelectedTeam();
+  myTeamId: number;
+  constructor(private data: DataServiceService,
+    private activatedRoute: ActivatedRoute) {
+    //this.myTeam = this.dataService.getSelectedTeam();
+    // this.data.myteam$.subscribe(team=>{this.myTeam=team
+    
+    // })
+    
    }
 
   ngOnInit() {
   
-    this.getTeams();
+    this.getGames();
   // if(this.selected){
   //   this.getTeams(this.team);
   //   console.log("Chekced" + this.team);
@@ -30,7 +37,7 @@ export class UpComingGamesComponent implements OnInit {
   
   }
 
-  getTeams() {
+  getGames() {
     this.data.getGames().subscribe(games => 
       { this.games = games;
       // console.log("Games" + this.games.length);

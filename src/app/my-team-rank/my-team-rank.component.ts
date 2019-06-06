@@ -15,7 +15,13 @@ export class MyTeamRankComponent implements OnInit {
   myTeam: Team;
   allTeams: Ladder[];
   constructor(private dataService: DataServiceService) {
-    this.myTeam = this.dataService.getSelectedTeam();
+      this.dataService.getTeam().subscribe(team => {
+      if (team) {
+
+        this.myTeam = team;
+      }
+      
+    });
    }
 
   ngOnInit() {

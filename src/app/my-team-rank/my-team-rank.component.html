@@ -1,17 +1,38 @@
-<div>
+<!-- <div>
   <table style="text-align: center;">
 
       <tr><th>Team Name</th><th>Rank</th><th>Venue</th><th>Round</th><th>Date</th></tr>
       
     
-      <tr *ngFor="let game of allTeams">
+      <tr *ngFor="let game of allTeams ">
     
         <td>{{game.team}}</td>
         <td>{{game.rank}}</td>
         
       </tr>
     </table>
-</div>
+</div> -->
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+              <th>Team Name</th>
+               
+                
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let game of allTeams">
+               <td>{{game.rank}}</td>
+                <td>{{game.team}}</td>
+        
+              </tr>
+        </tbody>
+            </table>
+        
+      </div>
 <!-- <div>
 <h2>{{team.name}}</h2>
 </div> -->

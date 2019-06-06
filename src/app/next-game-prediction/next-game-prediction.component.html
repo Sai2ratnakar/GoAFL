@@ -1,24 +1,22 @@
-<div>
-  <table style="text-align: center;">
 
-      <tr><th>Home Team</th><th>Away Team</th><th>Prediction</th><th>Date</th></tr>
-      
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Prediction</th>
+                <th>Date</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let game of nextGame">
     
-      <tr *ngFor="let game of nextGame">
-    
-        <td>{{game.hteam}}</td>
-        <td>{{game.ateam}}</td>
-        <td>{{game.tip}}</td>
-        <td>{{game.date}}</td>
-      </tr>
-    </table>
-</div>
-<!-- <div>
-<h2>{{team.name}}</h2>
-</div> -->
-
-<!-- <div>
-<li class= "items" *ngFor="let game of nextFive">
- <span>{{game.hteam}}</span> {{game.ateam}}
-</li>
-</div> -->
+                <td>{{game.hteam}}</td>
+                <td>{{game.ateam}}</td>
+                <td>{{game.tip}}</td>
+                <td>{{game.date}}</td>
+              </tr>
+        </tbody>
+            </table>
+        
+      </div>

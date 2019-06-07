@@ -12,15 +12,15 @@ import { UpComingGamesComponent } from './up-coming-games/up-coming-games.compon
 
 
 const appRoutes:Routes=[
- {path:'', component:MyTeamRankComponent},
-  {path:'upcoming', component:UpComingGamesComponent},
-  {path:'next-game-prdeiction', component:NextGamePredictionComponent},
+ {path:'/', component:MyTeamRankComponent},
+  {path:'/upcoming', component:UpComingGamesComponent},
+  {path:'/next-game-prdeiction', component:NextGamePredictionComponent},
   
-  {path:'next-five', component:NextFiveComponent},
+  {path:'/next-five', component:NextFiveComponent},
   
-  {path:'head-to-head', component:HeadToHeadComponent},
-  {path:'my-team-rank', component:MyTeamRankComponent},
-  {path:'my-team-results', component:MyTeamResultsComponent}
+  {path:'/head-to-head', component:HeadToHeadComponent},
+  {path:'/my-team-rank', component:MyTeamRankComponent},
+  {path:'/my-team-results', component:MyTeamResultsComponent}
   // { path: '**', component: UserFavTeamComponent }
   
 ]

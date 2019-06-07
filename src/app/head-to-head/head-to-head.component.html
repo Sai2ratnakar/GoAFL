@@ -1,11 +1,33 @@
+<!-- <div class="header">
+  <div class="dropdown">
+    <button class="dropbtn">Favorite Team 
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content" >
+      <a class="team-selection" *ngFor="let team of teams" (click)="onSelect(team)">{{team.name}}</a>
+      
+     
+    </div>  
+    <p>Your selected team is {{team.name}}</p> 
+    <p>Your selected team is {{myTeam.name}}</p>
+  </div> 
+    
+  <div class="logo">
+          <img src="logo.jpg" alt="" height="40" width="70">
+  </div>
+</div> -->
+
+
 <div>
   
   <p>My Rival team is {{myRival?.name}}</p>
-  <select class="form-control" (change)="updateGames(myRival)" [(ngModel)]="myRival">
+  
+  <select class="form-control" (change)="updateGames($event)" >
       <option disabled></option>
-      <option *ngFor="let team of teams" [value]="team">{{team.name}}</option>
+      <option *ngFor="let team of teams" [value]="team.name">{{team.name}}</option>
     </select>
-  <div>
+</div>
+  <!-- <div>
     <table style="text-align: center;">
 
         <tr><th>Home Team</th><th>Rival Team</th><th>Venue</th><th>Round</th><th>Date</th></tr>
@@ -14,16 +36,39 @@
         <tr *ngFor="let game of nextFive">
       
           <td>{{myTeam.name}}</td>
-          <td>{{myRival}}</td>
+          <td>{{MyRival}}</td>
           <td>{{game.venue}}</td>
           <td>{{game.round}}</td>
           <td>{{game.date}}</td>
         </tr>
       </table>
-</div>
+</div> -->
+<div class="table-wrapper">
+  <table class="fl-table">
+      <thead>
+          <tr>
+              <th>Date</th>
+              <th>myTeam</th>
+              <th>My Rival</th>
+              <th>Venue</th>
+              <th>Round</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let game of nextFive">
+  
+              <td>{{game.date}}</td>
+              <td>{{myTeam.name}}</td>
+              <td>{{myRival}}</td>
+              <td>{{game.venue}}</td>
+              <td>{{game.round}}</td>
+            </tr>
+      </tbody>
+          </table>
+      
+    </div>
 
 
-</div>
+
 <!-- <div>
 <h2>{{team.name}}</h2>
 </div> -->

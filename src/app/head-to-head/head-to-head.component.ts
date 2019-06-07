@@ -12,7 +12,7 @@ import { Tip } from '../tip';
 })
 export class HeadToHeadComponent implements OnInit {
   myTeam: Team;
-  myRival: Team;
+  myRival: string;
   teams: Team[];
 
   games: Game[];
@@ -22,21 +22,21 @@ export class HeadToHeadComponent implements OnInit {
     // this.myTeam = this.data.getSelectedTeam();
     this.dataService.getTeam().subscribe(team => {
       if (team) {
-
-        this.myTeam = team;
-        if (this.myRival) {
-
-          this.getGames();
-        }
+        this.myTeam = team;        
       }
+      if (this.myRival) {
+        // console.log(this.myRival);
+           this.getGames(this.myRival,this.myTeam);
+         }
     });
     this.getAFLTeams();
   }
 
-  updateGames() {
-    if (this.myTeam) {
-      this.getGames();
-    }
+  updateGames(event) {
+    
+      this.myRival=event.target.value;
+      // console.log(this.myRival);
+      this.getGames(this.myRival,this.myTeam);
   }
 
   getAFLTeams(): void {
@@ -45,32 +45,27 @@ export class HeadToHeadComponent implements OnInit {
 
   ngOnInit() {
   }
-  getGames() {
+  getGames(myRival:string, myTeam:Team) {
     this.dataService.getGames().subscribe(games => {
     this.games = games;
       // console.log("Games" + this.games.length);
 
-      // for(let game of this.games) {
-      //   // console.log(game);
-      //   if(game.complete==0){
-      //     this.nextRound = game.round;
-      //     break;
-      //   }
-      // }
-      // console.log("NEXT ROUND IS" + this.nextRound);
+       this.nextFive = [];
+      console.log(this.myTeam.name);
+      console.log(this.myRival);
+    for (let game of this.games) {
+      //console.log(game);
+      // console.log(this.myTeam.id);
+      // console.log(this.myRival);
+      if (game.ateam == this.myTeam.name || game.ateam == this.myRival) {
 
-      this.nextFive = [];
-
-      for (let game of this.games) {
-        //console.log(game);
-        if (game.ateam == this.myTeam.name || game.ateam == this.myRival.name) {
-
-          if (game.hteam == this.myTeam.name || game.hteam == this.myRival.name) {
-            // if((game.round = this.nextRound)){
-            this.nextFive.push(game);
-console.log(game);
-          }
+        if (game.hteam == this.myTeam.name || game.hteam == this.myRival) {
+          // if((game.round = this.nextRound)){
+          this.nextFive.push(game);
+          console.log(game);
+          console.log(this.nextFive);
         }
+      }
       }
     });
   }

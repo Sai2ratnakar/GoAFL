@@ -17,16 +17,18 @@
     <table class="fl-table">
         <thead>
             <tr>
+                <th>Team Name</th>
                 <th>Rank</th>
-              <th>Team Name</th>
+              
                
                 
               </tr>
         </thead>
         <tbody>
             <tr *ngFor="let game of allTeams">
-               <td>{{game.rank}}</td>
                 <td>{{game.team}}</td>
+              <td>{{game.rank}}</td>
+                
         
               </tr>
         </tbody>
